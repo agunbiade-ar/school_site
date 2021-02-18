@@ -1,0 +1,97 @@
+html{
+	
+	/*background-color: #aa8976;*/
+}
+
+
+.main{
+	font-family: 'Quicksand', sans-serif;
+	margin-top: 20px;
+	text-align: left;
+	margin: 0 auto;
+	box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+	background-color: #f0e2d0;
+	font-size: 15px;
+}
+
+.navigation {
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+	text-align: center;
+}
+
+.navigation li{
+	display: inline;
+	margin-right: 5px;
+	font-family: 'Potta One', cursive;
+
+}
+
+h3, .card-subtitle, .card-text h1,h3,h4, h6 {
+font-family: 'Potta One', cursive;	
+color:#532e1c;
+text-align: left;
+border-bottom: 2px solid #aa8976;
+}
+
+.navigation a, article a{
+	display: inline-block;
+	font-family: 'Potta One', cursive;
+	border: 1px dashed #f0e2d0;
+	border-bottom: none;
+	text-decoration: none;
+	margin: 3px 5px 1px 3px;
+	padding: 5px 15px 5px 15px;
+	color: #f0e2d0;
+	background-color: #aa8976;
+}
+
+.quote blockquote{
+	font-family: 'Potta One', cursive;
+}
+
+.quote blockquote small em, footer div{
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+
+img{
+	width: 200px;
+	height: 300px;
+}
+
+header img{
+	float: right;
+}
+.events{
+	text-align: center;
+}
+
+.events h3{
+	text-align: left;
+}
+
+.information{
+	margin-top: 15px;
+	padding: 10px;
+	text-align: center;
+	/*font-size: 1em;*/
+}
+
+footer{
+	margin-top: 50px;
+	height: 120px;
+	width: 100%;
+	color: #f0e2d0;
+	background-color: #aa8976;
+}
+
+header img{
+	width: 90px;
+	height: 90px;
+}
+footer div span{
+	display: inline;
+	text-align: right;
+}

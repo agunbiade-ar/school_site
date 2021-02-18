@@ -1,0 +1,63 @@
+{% extends "school/base.html" %}
+
+{% block content %}
+<h3>Subjects offered for Our</h3>
+<div class="accordion accordion-flush" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Nursery and Primary School
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        
+<ol>
+	{% for subjects in subject_list %}
+
+	<li>{{ subjects }}</li>
+
+	{% endfor %}
+</ol>
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Junior Secondary School
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+<ol>
+	{% for subjects in jsubject_category %}
+
+	<li>{{ subjects }}</li>
+
+	{% endfor %}
+</ol>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Senior Secondary School
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+<ol>
+	{% for subjects in ssubject_category %}
+
+	<li>{{ subjects }}</li>
+
+	{% endfor %}
+</ol>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}

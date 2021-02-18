@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unique Leaders Academy</title>
+	<meta charset="utf-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Quicksand&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'school/styles.css' %}">
+	
+</head>
+<body class="container main">
+		<nav>
+			<ul class="navigation">
+				<li><a href="{% url 'school:homepage' %}">Home</a></li>
+				<li><a href="{% url 'school:subjects-offered' %}">Subjects Offered/ Classes</a></li>
+				<li><a href="{% url 'school:enroll-your-child' %}">Enroll a child</a></li>
+				<li><a href="#">Pricing & School fees</a></li>
+				<li><a href="{% url 'school:contact' %}">Contact Us</a></li>
+				<li><a href="{% url 'school:add-suggestion' %}">Suggestion/Opinion</a></li>
+				<li><a href="#">Sign in</a></li>
+			</ul>
+		</nav>
+
+{% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" >
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>    
+  </div>
+</div>
+{% endfor %}
+
+		
+		<header class="quote">
+			<img src="{% static 'school/logo.jpeg' %}" class="img-thumbnail" alt="...">
+
+			<blockquote>
+				Instruction does much, but encouragement everything.<br>
+				<small><em>Johann Wolfgang von Goethe</em></small>
+			</blockquote>
+		</header>
+			{% block content %}
+			{% endblock content%}
+
+		<footer>
+	      	<div class="information">
+	      			<span>Coordinator: 081-5077-9091, 070-6180-1881</span><br>
+
+	      			<span>Proprietor: 081-5555-9394, 081-4447-0820</span><br>
+					<span>Proprietress: 080-7634-4249,  080-3384-9987</span><br>
+					<span>No. 15 Area 6, Opposite Army Barracks Otokiti Village, Lokoja, Kogi state.</span><br>
+			</div>		
+		</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

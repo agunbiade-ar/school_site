@@ -1,0 +1,44 @@
+{% extends "school/base.html" %}
+
+{% block content %}
+
+<section class="content-section">
+	<p>
+		We've created a condusive atmosphere for learning, and we're taking strides to enable the dreams of parents and children come true.
+		Being able to discover the latent potential in children, and trying our very best in cultivating that potential, with the use of a well developed curriculum that spans British, American coupled with our adopted montessori principles and the resources as well to groom your child in the best way possible
+		for their future.
+		We use the 21st century techniques and technologies to expand your child's horizon and helping them along the path to greatness.
+	</p>
+
+	 <p class="card-text">
+	 	<h4 class="card-subtitle mb-2">About Us</h4>
+    	Unique Leaders Academy was established by <em>Hajia Sefinat Obosuahi Abdullahi and Mr. Abdullahi Umar Etudaiye on August, 17th 2017 </em>, and comprised of eight staffs with nursery and some primary classes.
+		it has since grown from strength to strength and today caters to young people from the ages of 2 all through to 18.
+
+	</p>
+</section>
+
+	<div class="container-md pictures text-center">
+
+    {% load static %}
+      <img src="{% static 'school/idea.jpg' %}" class="rounded img-thumbnail" alt="...">
+
+      <img src="{% static 'school/school.jpg' %}" class="rounded img-thumbnail" alt="...">
+
+      <img src="{% static 'school/coffee.jpg' %}" class="rounded img-thumbnail" alt="...">
+
+      <img src="{% static 'school/coffee.jpg' %}" class="rounded img-thumbnail" alt="...">
+    </div>
+
+
+<article class="events">
+	<h4>Upcoming Events</h4>
+	<span> Inter-house sports coming up on November 21st, 2021</span><br>
+	<span> Junior Waec Examinations starting on September 30th, 2021</span><br>
+	<span> Spelling Competition on July 5th, 2021</span><br>
+	<a href="#">See more events</a>
+	<br>
+</article>
+
+</div>
+{% endblock content%}

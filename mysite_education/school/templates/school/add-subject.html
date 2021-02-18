@@ -1,0 +1,16 @@
+{% extends "school/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h2> Add a Subject </h2>
+<hr>
+
+<form method="POST">
+	{% csrf_token %}
+	{{ form|crispy }}
+
+	<button type="submit" class="btn btn-outline-secondary">Submit</button>
+</form>
+
+{% endblock content%}
