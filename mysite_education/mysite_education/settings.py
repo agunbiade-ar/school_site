@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
-
+from others import *
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
@@ -28,9 +28,6 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'school/templates/school')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xb=37m$=-bq4km=j2&0c(smsk5wa6zv#y=p3*y+6(t$t-9id(r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
