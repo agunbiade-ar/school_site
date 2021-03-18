@@ -1,0 +1,12 @@
+{% extends "school/base.html" %}
+
+{% block content %}
+
+<h3>All Events </h3>
+<ol>
+{% for event in events_list %}
+    <li> <h5><a href="{% url 'school:event-detail' pk=event.pk %}"> {{ event.title }}</a></h5>
+    <em>Coming up On <strong>{{ event.event_date }}</strong></em> </li>
+{% endfor %}
+</ol>
+{% endblock content%}

@@ -1,6 +1,6 @@
 from django import forms
 from django.db import models
-from school.models import Suggestion, Student, Subject
+from school.models import Suggestion, Student, Subject, Events
 from django.forms import Textarea
 
 class SuggestionForm(forms.ModelForm):
@@ -27,4 +27,14 @@ class SubjectForm(forms.ModelForm):
 
 	class Meta():
 		model = Subject
-		fields = ('subject_title', 'subject_category')	
+		fields = ('subject_title', 'subject_category')
+
+class EventForm(forms.ModelForm):
+
+	class Meta():
+		model = Events
+		fields = ('title', 'description', 'event_date')
+
+		widgets= {
+		'description': Textarea(attrs={'cols':30, 'rows': 3}),
+		}

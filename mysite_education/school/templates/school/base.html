@@ -16,12 +16,19 @@
 		<nav>
 			<ul class="navigation">
 				<li><a href="{% url 'school:homepage' %}">Home</a></li>
-				<li><a href="{% url 'school:subjects-offered' %}">Subjects Offered/ Classes</a></li>
+				<li><a href="{% url 'school:subjects-offered' %}">Subjects Offered</a></li>
 				<li><a href="{% url 'school:enroll-your-child' %}">Enroll a child</a></li>
 				<li><a href="#">Pricing & School fees</a></li>
 				<li><a href="{% url 'school:contact' %}">Contact Us</a></li>
-				<li><a href="{% url 'school:add-suggestion' %}">Suggestion/Opinion</a></li>
-				<li><a href="#">Sign in</a></li>
+				<li><a href="{% url 'school:add-suggestion' %}">Offer a Suggestion</a></li>
+				<li><a href="{% url 'school:event-list' %}">Upcoming Events</a></li>
+			{% if user.is_authenticated %}
+				<li><a href="{% url 'school:create-event' %}">Add Events</a></li>
+				<li><a href="#">Classes/Students</a></li>
+				<li><a href="{% url 'logout' %}">Sign Out</a></li>
+			{% else %}
+				<li><a href="{% url 'login' %}">Sign in</a></li>
+			{% endif %}
 			</ul>
 		</nav>
 
@@ -40,8 +47,8 @@
 			<img src="{% static 'school/logo.jpeg' %}" class="img-thumbnail" alt="...">
 
 			<blockquote>
-				Instruction does much, but encouragement everything.<br>
-				<small><em>Johann Wolfgang von Goethe</em></small>
+				"With Knowledge and Creativity, great things are possible"<br>
+				<small><em>Unique Leaders Academy</em></small>
 			</blockquote>
 		</header>
 			{% block content %}

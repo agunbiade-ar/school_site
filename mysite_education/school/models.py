@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.utils import timezone
 from PIL import Image
+from django.urls import reverse
 
 GENOTYPE_CHOICES = (
     ('AA', 'AA'),
@@ -61,3 +62,17 @@ class Subject(models.Model):
 
 	def __str__(self):
 		return self.subject_title
+
+class Events(models.Model):
+	title = models.CharField(max_length=255)
+	description = models.TextField()
+	event_date = models.DateTimeField(default=timezone.now)
+
+	class Meta:
+		verbose_name_plural = 'Events'
+
+	def get_absolute_url(self):
+		return reverse("school:event-detail", kwargs={'pk':self.pk })
+
+	def __str__(self):
+		return self.title

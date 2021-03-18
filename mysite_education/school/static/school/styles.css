@@ -2,7 +2,10 @@ html{
 	
 	/*background-color: #aa8976;*/
 }
-
+h4.editevent{
+	border: none;
+	color: yellow;
+}
 
 .main{
 	font-family: 'Quicksand', sans-serif;

@@ -1,14 +1,48 @@
 from django.views.generic import (
-	TemplateView, CreateView, ListView)
+	TemplateView, CreateView, ListView, UpdateView, DeleteView, DetailView, list)
 
-from school.models import Suggestion, Subject
-from school.forms import SuggestionForm, StudentForm, SubjectForm
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from school.models import Suggestion, Subject, Events
+from school.forms import SuggestionForm, StudentForm, SubjectForm, EventForm
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
 # Create your views here.
-class AboutView(TemplateView):
+class EventListView(ListView):
+	model = Events
+	
+	def get_queryset(self):
+		return Events.objects.order_by('event_date')
+
+class EventDetailView(DetailView):
+	model = Events
+
+class CreateEventView(LoginRequiredMixin, CreateView):
+	login_url = '/login/'
+	redirect_field_name = 'school/event_detail.html'
+	form_class = EventForm
+	model = Events
+
+class EventUpdateView(LoginRequiredMixin, UpdateView):
+	login_url = '/login/'
+	redirect_field_name = 'school/event_detail.html'
+	form_class = EventForm
+	model = Events
+
+class EventDeleteView(LoginRequiredMixin, DeleteView):
+	model = Events
+	success_url = reverse_lazy('school:event-list')
+
+
+class AboutView(ListView):
 	template_name = 'home-page.html'
+	context_object_name = 'event_list'
+	model = Events
+
+	def get_context_data(self, **kwargs):
+		kwargs.setdefault('event_list', Events.objects.all()[0:3])
+		return super().get_context_data(**kwargs)
 
 class ContactView(TemplateView):
 	template_name = 'contact.html'
@@ -25,8 +59,6 @@ class NPSubjectListView(ListView):
 		context['jsubject_category'] = Subject.objects.filter(subject_category='JSS')
 		context['ssubject_category'] = Subject.objects.filter(subject_category='SSS')
 		return context
-
-
 
 def add_suggestion(request):
 	if request.method == 'POST':
